@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(
- 'mongodb://127.0.0.1:27017/paymentDB'
+ 'mongodb+srv://rohithcheruku1_db_user:<db_password>@cluster0.fh5o0r7.mongodb.net/?appName=Cluster0'
 )
 
 .then(() =>
