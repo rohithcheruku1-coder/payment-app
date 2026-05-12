@@ -14,7 +14,9 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(
- 'mongodb+srv://rohithcheruku1_db_user:<db_password>@cluster0.fh5o0r7.mongodb.net/?appName=Cluster0'
+ 
+'mongodb://rohith:Rohithdata123@ac-9gt7l2v-shard-00-00.fh5o0r7.mongodb.net:27017,ac-9gt7l2v-shard-00-01.fh5o0r7.mongodb.net:27017,ac-9gt7l2v-shard-00-02.fh5o0r7.mongodb.net:27017/?ssl=true&replicaSet=atlas-f06c7u-shard-0&authSource=admin&appName=Cluster0'
+
 )
 
 .then(() =>
