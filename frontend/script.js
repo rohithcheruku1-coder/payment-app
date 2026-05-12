@@ -54,7 +54,7 @@ async function payNow(method) {
     };
 
     await fetch(
-      'http://localhost:5000/save-payment',
+      'https://payment-backend-exbi.onrender.com/save-payment',
       {
 
       method: 'POST',
