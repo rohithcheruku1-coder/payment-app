@@ -18,44 +18,38 @@
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <h2>Payment Form</h2>
+    <h2>Secure Payment</h2>
 
-  <input type="text"
-         id="name"
-         placeholder="Enter Name">
+    <input
+      type="text"
+      id="name"
+      placeholder="Enter Name"
+    >
 
-  <input type="number"
-         id="amount"
-         placeholder="Enter Amount">
+    <input
+      type="number"
+      id="amount"
+      placeholder="Enter Amount"
+    >
 
-  <button onclick="showOptions()">
-    Pay
-  </button>
-
-  <div id="paymentOptions"
-       class="payment-options">
-
-    <button onclick="payNow('PhonePe')">
-      PhonePe
+    <button onclick="payNow()">
+      Pay Now
     </button>
 
-    <button onclick="payNow('GPay')">
-      Google Pay
-    </button>
-
-    <button onclick="payNow('Paytm')">
-      Paytm
-    </button>
+    <div id="status"></div>
 
   </div>
 
-  <div id="status"></div>
+  <!-- SCRIPT -->
 
-</div>
+  <script src="script.js"></script>
 
-<script src="script.js"></script>
+  <!-- RAZORPAY -->
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 </body>
+
 </html>
