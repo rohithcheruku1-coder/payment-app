@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0">
+
+  <title>UPI Payment</title>
+
+  <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>Payment Form</h2>
+
+  <input type="text"
+         id="name"
+         placeholder="Enter Name">
+
+  <input type="number"
+         id="amount"
+         placeholder="Enter Amount">
+
+  <button onclick="showOptions()">
+    Pay
+  </button>
+
+  <div id="paymentOptions"
+       class="payment-options">
+
+    <button onclick="payNow('PhonePe')">
+      PhonePe
+    </button>
+
+    <button onclick="payNow('GPay')">
+      Google Pay
+    </button>
+
+    <button onclick="payNow('Paytm')">
+      Paytm
+    </button>
+
+  </div>
+
+  <div id="status"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
