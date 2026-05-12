@@ -1,10 +1,10 @@
-function showOptions() {
+async function payNow() {
 
   const name =
-    document.getElementById('name').value;
+   document.getElementById('name').value;
 
   const amount =
-    document.getElementById('amount').value;
+   document.getElementById('amount').value;
 
   if (!name || !amount) {
 
@@ -14,64 +14,61 @@ function showOptions() {
 
   }
 
-  document.getElementById(
-   'paymentOptions'
-  ).style.display = 'block';
+  // YOUR REAL UPI ID
 
-}
-
-async function payNow(method) {
-
-  const name =
-    document.getElementById('name').value;
-
-  const amount =
-    document.getElementById('amount').value;
-
-  // YOUR UPI ID
   const upiId =
    '7032472492@axl';
+
+  // UPI PAYMENT LINK
 
   const upiLink =
 
 `upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR`;
 
+  // OPEN PAYMENT APP
+
   window.location.href =
     upiLink;
 
-  setTimeout(async () => {
+  // OPTIONAL DATABASE SAVE
 
-    const paymentData = {
+  const paymentData = {
 
-      name,
+    name,
 
-      amount,
+    amount,
 
-      paymentMethod: method,
+    paymentMethod: 'UPI',
 
-      paymentStatus: 'SUCCESS'
+    paymentStatus: 'PENDING'
 
-    };
+  };
+
+  try {
 
     await fetch(
+
       'https://payment-backend-exbi.onrender.com/save-payment',
+
       {
 
-      method: 'POST',
+        method: 'POST',
 
-      headers: {
-        'Content-Type': 'application/json'
-      },
+        headers: {
+          'Content-Type': 'application/json'
+        },
 
-      body: JSON.stringify(paymentData)
+        body:
+         JSON.stringify(paymentData)
 
-    });
+      }
 
-    document.getElementById(
-      'status'
-    ).innerHTML =
-      'Payment Successful';
+    );
 
-  }, 3000);
+  } catch (error) {
+
+    console.log(error);
+
+  }
 
 }
